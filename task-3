@@ -1,0 +1,50 @@
+function turnRight() {
+    turnLeft();
+    turnLeft();
+    turnLeft();
+}
+function  func1(){
+    RM();
+    LM();
+}
+function LM(){
+    turnLeft();
+    move();
+}
+function RM(){
+    turnRight();
+    move();
+}
+function main(){
+    turnLeft();
+    repeat(2) {
+        move();
+        move();
+    }
+    func1();
+    RM();
+    move();
+    repeat(2) {
+        turnRight();
+        move();
+    }
+    LM();
+    turnRight();
+    move();
+    repeat(2) {
+        turnLeft();
+        move();
+    }
+    move();
+    repeat(2) {
+        func1();
+    }
+    LM();
+    move();
+    LM();
+    turnRight();
+    move();
+    move();
+    RM();
+    LM();
+}
