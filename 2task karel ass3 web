@@ -1,0 +1,54 @@
+function main(){
+    repeat(2) {
+        move();
+        move();
+        putBeeper();
+    }
+    turnLeft();
+    repeat(2) {
+        move();
+        move();
+        putBeeper();
+    }
+    turnLeft();
+    repeat(2) {
+        move();
+        move();
+        putBeeper();
+    }
+    turnLeft();
+    repeat(2) {
+        move();
+        move();
+        putBeeper();
+    }
+    repeat(2) {
+        turnLeft();
+        move();
+    }
+    repeat(3) {
+        turnLeft();
+    }
+    repeat(4) {
+        putBeeper();
+        move();
+        move();
+        turnLeft();
+    }
+    repeat(2) {
+        move();
+        turnLeft();
+    }
+    repeat(2) {
+        turnLeft();
+    }
+    putBeeper();
+    repeat(2) {
+        move();
+        move();
+        turnLeft();
+    }
+    repeat(2) {
+        turnLeft();
+    }
+}
