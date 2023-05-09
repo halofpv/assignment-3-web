@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+  <style>
+    .header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 35%;
+      margin-right: 35%;
+    }
+    .container1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container2{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .text{
+      margin-left: 15%;
+      margin-right: 15%;
+      font-size: 200%;
+      text-align: center;
+    }
+    .label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 200%;
+    }
+
+    .label input {
+      margin-top: 10px;
+      display: block;
+      width: 160px;
+      height: 60px;
+      font-size: 24px;
+    }
+
+    .label label {
+      display: block;
+    }
+
+    .label button{
+      margin-top: 10px;
+      width: 160px;
+      height: 60px;
+      font-size: 90%;
+    }
+    .result1{
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 200%;
+    }
+    .button{
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 200%;
+    }
+  </style>
+</head>
+<body>
+<div class="container1">
+  <div class="container2">
+    <div class="header">
+      <h1>Let's play the game</h1>
+    </div>
+    <div class="text">
+      <p>
+        The rules are very simple: at the beginning of the evening, all players write down their names. When it comes time to pay the bill at the end of the evening, one player is randomly selected and declared the "lucky one" who must pay the check for everyone present at the restaurant.
+      </p>
+      <p>
+        This can be unpredictable and fun, as no one knows who will be chosen at the end of the evening. Someone may hope that their name will not be chosen, but in the end, everyone should be ready to cover the bill for everyone, and that's where all the fun lies.
+      </p>
+      <p>
+        "Check for everyone" is not only a fun game, but also a way to show generosity and care for one's friends. Once the player has been chosen, everyone can thank them and congratulate them on their victory, and then enjoy the rest of the evening, knowing that all expenses have been evenly distributed.
+      </p>
+    </div>
+    <div class="labeli">
+      <div class="label">
+        <label for="number">Number of friends: </label>
+        <input type="number" id="number">
+        <button onclick="checkNum()">Go!</button>
+      </div>
+      <div class="result1">
+        <p id="result"></p>
+      </div>
+      <div class="button">
+        <div class="button20">
+          <button onclick="sendNames()">Send Names</button>
+        </div>
+        <p id="result2"></p>
+      </div>
+    </div>
+    <script>
+      const inputs = [];
+      function checkNum() {
+        const n = parseInt(document.getElementById("number").value);
+        const labelDiv = document.querySelector('.label');
+        labelDiv.innerHTML = '';
+        for (let i = 0; i < n; i++) {
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.placeholder = "Enter name " + (i + 1);
+          labelDiv.appendChild(input);
+          inputs.push(input);
+        }
+      }
+      function sendNames() {
+        const names = [];
+        inputs.forEach((input) => {
+          names.push(input.value);
+        });
+        ShowNames(names);
+      }
+      function ShowNames(names){
+        const RI = Math.floor(Math.random() * names.length);
+        document.getElementById("result2").innerHTML = names[RI] + "";
+      }
+    </script>
+  </div>
+</div>
+</body>
+</html>
