@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibbonachi</title>
+  <style>
+    .header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 35%;
+      margin-right: 35%;
+    }
+    .container1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container2{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .text{
+      margin-left: 15%;
+      margin-right: 15%;
+      font-size: 200%;
+      text-align: center;
+    }
+    .label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 200%;
+    }
+
+    .label input {
+      margin-top: 10px;
+      display: block;
+      width: 160px;
+      height: 60px;
+      font-size: 24px;
+    }
+
+    .label label {
+      display: block;
+    }
+
+    .label button{
+      margin-top: 10px;
+      width: 160px;
+      height: 60px;
+      font-size: 70%;
+    }
+    .result{
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 200%;
+    }
+  </style>
+</head>
+<body>
+<div class="container1">
+  <div class="container2">
+    <div class="header">
+      <h1>Fibbonaci numbers</h1>
+    </div>
+    <div class="text">
+      <p></p>
+    </div>
+    <div class="labeli">
+      <div class="label">
+        <label for="num">Put number: </label>
+        <input type="number" id="num">
+        <button onclick="fibbonateIt()">FIBBONATE IT!</button>
+      </div>
+      <div class="result">
+        <p id="result"></p>
+        <p id="result2"></p>
+      </div>
+    </div>
+    <script>
+      function fibbonateIt(){
+        const n = parseInt(document.getElementById("num").value);
+        if (n === 0) {
+          document.getElementById("result").innerHTML = 0;
+        } else if (n === 1) {
+          document.getElementById("result").innerHTML = 0;
+        } else {
+          var sequence = [0, 1];
+          for (var i = 2; i < n; i++) {
+            sequence[i] = sequence[i - 1] + sequence[i - 2];
+          }
+          document.getElementById("result").innerHTML = "Sequence: " + sequence;
+          document.getElementById("result2").innerHTML = "Result: " + sequence[n-1];
+        }
+      }
+    </script>
+  </div>
+</div>
+</body>
+</html>
+
