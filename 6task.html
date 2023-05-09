@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>year</title>
+    <style>
+        .header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+        .container1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container2{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .text{
+            margin-left: 15%;
+            margin-right: 15%;
+            font-size: 200%;
+            text-align: center;
+        }
+        .label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 200%;
+        }
+
+        .label input {
+            margin-top: 10px;
+            display: block;
+            width: 160px;
+            height: 60px;
+            font-size: 24px;
+        }
+
+        .label label {
+            display: block;
+        }
+
+        .label button{
+            margin-top: 10px;
+            width: 160px;
+            height: 60px;
+            font-size: 90%;
+        }
+        .result{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 200%;
+            color: #ba3430;
+        }
+    </style>
+</head>
+<body>
+<div class="container1">
+    <div class="container2">
+        <div class="header">
+            <h1>leap year</h1>
+        </div>
+        <div class="text">
+            <p>This calculator checks year on leap. Firstly, if year divide by 4 without remainder we find out that this is leap year.
+                Howewer, we should check it on 2 extra rules.
+                If this year also divides on 100 but with remainder or divides by 400 without remainder it is also proves leap.</p>
+        </div>
+        <div class="labeli">
+            <div class="label">
+                <label for="year">Year: </label>
+                <input type="number" id="year">
+                <button onclick="checkYear()">Check</button>
+            </div>
+            <div class="result">
+                <p id="result"></p>
+            </div>
+        </div>
+        <script>
+            function checkYear(){
+                const year = parseInt(document.getElementById("year").value);
+                if(year%4==0 && (year%100!=0 || year%400==0)){
+                    document.getElementById("result").innerHTML = "Given year is a leap year.";
+                }
+                else{
+                    document.getElementById("result").innerHTML = "Given year is not a leap year.";
+                }
+            }
+        </script>
+    </div>
+</div>
+</body>
+</html>
